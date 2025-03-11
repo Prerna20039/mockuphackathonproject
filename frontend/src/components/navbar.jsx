@@ -6,19 +6,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-600 p-4 text-white">
+    <nav className="bg-[#090909]  ">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
         <Link to="/" className="text-2xl font-bold">
-          MyBrand
+          <img src="/images/logo.png" ></img>
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
-          <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
-          <li><Link to="/about" className="hover:text-gray-300">About</Link></li>
-          <li><Link to="/services" className="hover:text-gray-300">Services</Link></li>
-          <li><Link to="/contact" className="hover:text-gray-300">Contact</Link></li>
+        <ul className="hidden md:flex space-x-2 mr-[100px] pt-5">
+          <li><Link to="/" className="hover:text-[#E65B07] text-[#FFFFFF] text-[20px] font-sans">Home</Link></li>
+          <li><Link to="/" className="hover:text-[#E65B07] text-[#FFFFFF] text-[20px] font-sans">Gallery</Link></li>
+          <li><Link to="/" className="hover:text-[#E65B07] text-[#FFFFFF] text-[20px] font-sans">Contact</Link></li>
+
         </ul>
 
         {/* Mobile Menu Button */}
@@ -27,15 +26,8 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <ul className="md:hidden mt-4 space-y-2 bg-blue-700 p-4">
-          <li><Link to="/" className="block hover:text-gray-300">Home</Link></li>
-          <li><Link to="/about" className="block hover:text-gray-300">About</Link></li>
-          <li><Link to="/services" className="block hover:text-gray-300">Services</Link></li>
-          <li><Link to="/contact" className="block hover:text-gray-300">Contact</Link></li>
-        </ul>
-      )}
+      
+      
     </nav>
   );
 };
