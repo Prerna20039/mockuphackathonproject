@@ -5,6 +5,8 @@ import HeroSection from "./components/herosection";
 import ProductShowcase from "./components/product_showcase";
 import NutritionInfo from "./components/NutritionInfo";
 import LaunchingSection from "./components/launching";
+import BlackSimbaCertificate from "./components/certificate";
+import Footer from "./components/footer";
 
 
 export default function App() {
@@ -15,6 +17,8 @@ export default function App() {
       <ProductShowcase />
       <NutritionInfo />
       <LaunchingSection />
+      <BlackSimbaCertificate />
+      <Footer />
     </div>
   );
 }

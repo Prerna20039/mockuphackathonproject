@@ -1,6 +1,5 @@
 "use client"
 
-
 import { motion } from "framer-motion"
 
 export default function LaunchSection() {
@@ -8,22 +7,22 @@ export default function LaunchSection() {
     {
       src: "/images/one.svg",
       alt: "Launch ceremony group photo 1",
-      className: "col-span-2 md:col-span-3",
+      className: "col-span-2 md:col-span-3 row-span-1", // Ensure same size as fourth image
     },
     {
       src: "/images/two.svg",
       alt: "Launch ceremony group photo 2",
-      className: "col-span-2 md:col-span-2",
+      className: "col-span-2 md:col-span-2 row-span-1",
     },
     {
       src: "/images/image.svg",
       alt: "Black Simba brand showcase",
-      className: "col-span-2",
+      className: "col-span-2 md:col-span-2 row-span-1",
     },
     {
       src: "/images/four.svg",
       alt: "Launch ceremony group photo 3",
-      className: "col-span-2",
+      className: "col-span-2 md:col-span-3 row-span-1", // Same size as first image
     },
   ]
 
@@ -83,15 +82,13 @@ export default function LaunchSection() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`relative ${image.className} aspect-[4/3] overflow-hidden rounded-2xl`}
+              className={`relative ${image.className} aspect-[16/9] overflow-hidden rounded-2xl`} // Ensures equal height
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
               <img
                 src={image.src || "/placeholder.svg"}
                 alt={image.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </motion.div>
           ))}
