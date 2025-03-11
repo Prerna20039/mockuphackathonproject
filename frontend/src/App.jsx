@@ -1,16 +1,12 @@
 import React from 'react'
 import './App.css'
-import PreHeader from './components/PreHeader'
-import Header from './components/Header'
-import Hero from './components/Hero'
+import Navbar from './components/navbar'
 
 
 
 const App = () => {
   return (
-    <div><PreHeader/>
-    <Header/>
-    <Hero/></div>
+    <div><Navbar/></div>
   )
 }
 
