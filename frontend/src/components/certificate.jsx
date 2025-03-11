@@ -1,34 +1,46 @@
-import React from 'react';
+"use client";
+import { motion } from "framer-motion";
 
-const BlackSimbaCertificate = () => {
+export default function CertificateSection() {
   return (
-    <div className=" min-h-screen flex items-center justify-center">
-      <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-2xl text-center">
-        <h2 className="text-3xl font-bold mb-6">Certificate</h2>
-
-        <p className="text-lg mb-4">
-          Become a part of the Black Simba Pride and embrace the energy of the wild.
+    <section className="bg-black text-white py-16 md:py-24">
+      <div className="container mx-auto px-4 sm:px-6 text-center">
+        {/* Title */}
+        <h2 className="text-[#E65B07] text-3xl md:text-4xl font-bold mb-2">
+          Certificate
+        </h2>
+        <p className="text-gray-300 text-lg mb-6">
+          Become a part of the Black Simba Pride and embrace energy of the wild.
         </p>
 
-        <p className="text-base mb-8">
-          We believe in transparency and keeping our customers informed about the products they consume. Stay up-to-date with our latest product specifications.
-        </p>
+        {/* Purple Bordered Box */}
+        <div className="bg-[#1A1512] p-6 rounded-md md:p-10 inline-block">
+          {/* Description Box */}
+          <div className=" p-4 mb-6 inline-block">
+            <p className="text-gray-300 text-base md:text-lg">
+              We believe in transparency and keeping our customers informed
+              about the products they consume. Stay up-to-date with our latest
+              product specifications.
+            </p>
+          </div>
 
-        <div className="relative mb-8">
-          {/* Replace with your certificate image */}
-          <img
-            src="/images/certificate.png" 
-            alt="Black Simba Certificate"
-            className="w-full rounded-lg"
-          />
+          {/* Certificate Image */}
+          <div className="flex justify-center mb-4">
+            <img
+              src="/images/certificate.svg"
+              alt="Product Specification"
+              className=" rounded-lg w-64 md:w-80"
+            />
+          </div>
+
+          {/* VIEW Button */}
+          <div className="flex justify-center">
+            <button className="border-2 border-[#666666] text-[#E65B07] rounded-md px-4 py-2 flex items-center gap-2  transition">
+              VIEW <img src="/images/arrow.svg"></img>
+            </button>
+          </div>
         </div>
-
-        <button className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition duration-300">
-          VIEW →
-        </button>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default BlackSimbaCertificate;
+}
