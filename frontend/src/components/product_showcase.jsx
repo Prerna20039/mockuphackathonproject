@@ -16,7 +16,7 @@ export default function ProductShowcase() {
   }, [])
   
   return (
-    <section className="relative w-full bg-black text-white py-20 overflow-hidden">
+    <section className="relative mt-2 w-full bg-black text-white py-20 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/80 via-black/40 to-black/80 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -38,21 +38,7 @@ export default function ProductShowcase() {
           </div>
           
           {/* Product Image - Center (Enlarged) */}
-          <motion.div
-            className="lg:col-span-6 flex justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="relative w-[250px] h-[500px] md:w-[634px] md:h-[420px]">
-              <img
-                src="/images/can.svg?height=600&width=300"
-                alt="Black Simba Energy Drink Can"
-                className="object-contain w-full h-full "
-              />
-              <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-48 h-12 bg-[#E65B07]/20 blur-xl rounded-full"></div>
-            </div>
-          </motion.div>
+         
           
           {/* Text Content - Right */}
           <motion.div

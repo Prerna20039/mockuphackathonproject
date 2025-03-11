@@ -13,15 +13,15 @@ export default function NutritionInfo() {
   ];
 
   return (
-    <section className="relative w-full bg-black text-white py-16 flex justify-center items-center overflow-hidden">
+    <section className="relative w-full bg-black text-white py-24 flex justify-center items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black/90 to-black/80"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
-          <div className="relative w-full mx-auto h-[400px] flex items-center justify-center -ml-16">
+          <div className="relative w-full mx-auto h-[500px] flex items-center justify-center -ml-20">
             {/* Rotating Can Animation */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1, rotate: [0, 2, -2, 0] }}
               transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
               className="absolute z-20"
@@ -30,15 +30,15 @@ export default function NutritionInfo() {
                 <img
                   src="/images/can.svg"
                   alt="Energy Drink Can"
-                  className="w-[250px] drop-shadow-[0_0_20px_rgba(230,91,7,0.5)] ml-28 mt-16"
+                  className="w-[300px] drop-shadow-[0_0_30px_rgba(230,91,7,0.6)] ml-32 mt-20"
                 />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-[#E65B07]/30 blur-md rounded-full"></div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-36 h-7 bg-[#E65B07]/30 blur-lg rounded-full"></div>
               </div>
             </motion.div>
 
             {nutritionFacts.map((fact, index) => {
               const angle = (index * (360 / nutritionFacts.length)) * (Math.PI / 180);
-              const radius = 240;
+              const radius = 280; // Increased radius for better spacing
               const delay = 0.2 + index * 0.15;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
@@ -51,7 +51,7 @@ export default function NutritionInfo() {
                     opacity: 1,
                     x,
                     y,
-                    y: [y, y - 10, y, y + 10, y], // Floating effect
+                    y: [y, y - 12, y, y + 12, y], // Floating effect
                   }}
                   transition={{
                     duration: 3,
@@ -64,7 +64,7 @@ export default function NutritionInfo() {
                   style={{ left: "50%", top: "50%" }}
                 >
                   <motion.div
-                    className="absolute top-1/2 left-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#E65B07]/70 to-[#E65B07]"
+                    className="absolute top-1/2 left-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[#E65B07]/70 to-[#E65B07]"
                     style={{
                       transform: `rotate(${angle * (180 / Math.PI)}deg)`,
                       transformOrigin: "left center",
@@ -76,7 +76,7 @@ export default function NutritionInfo() {
 
                   {/* Pulsing Dot Animation */}
                   <motion.div
-                    className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-[#E65B07]"
+                    className="absolute top-1/2 left-1/2 w-3 h-3 rounded-full bg-[#E65B07]"
                     style={{ transform: `translate(-50%, -50%)` }}
                     animate={{
                       scale: [1, 1.5, 1],
@@ -89,11 +89,11 @@ export default function NutritionInfo() {
                     }}
                   />
 
-                  <div className="bg-black/60 border border-[#E65B07]/50 rounded-lg p-3 w-40 shadow-[0_0_15px_rgba(230,91,7,0.15)]">
-                    <p className="text-[#E65B07] font-medium text-sm mb-1">{fact.label}</p>
+                  <div className="bg-black/70 border border-[#E65B07]/50 rounded-lg p-4 w-48 shadow-[0_0_20px_rgba(230,91,7,0.2)]">
+                    <p className="text-[#E65B07] font-semibold text-lg mb-1">{fact.label}</p>
                     <div className="flex justify-between items-center">
-                      <p className="text-white text-sm">{fact.value}</p>
-                      <p className="text-[#E65B07] text-sm font-medium">{fact.percentage}</p>
+                      <p className="text-white text-lg">{fact.value}</p>
+                      <p className="text-[#E65B07] text-lg font-semibold">{fact.percentage}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -101,22 +101,22 @@ export default function NutritionInfo() {
             })}
 
             {/* Twinkling Sparks Animation */}
-            {[...Array(12)].map((_, i) => {
-              const angle = (i * 30) * (Math.PI / 180);
-              const radius = 80 + Math.random() * 80;
-              const scale = 0.5 + Math.random() * 0.5;
+            {[...Array(14)].map((_, i) => {
+              const angle = (i * 25) * (Math.PI / 180);
+              const radius = 100 + Math.random() * 100; // Expanded range
+              const scale = 0.6 + Math.random() * 0.6;
 
               return (
                 <motion.div
                   key={`spark-${i}`}
-                  className="absolute w-1 h-1 rounded-full bg-[#E65B07]/70"
+                  className="absolute w-2 h-2 rounded-full bg-[#E65B07]/80"
                   style={{ left: "50%", top: "50%", transform: `translate(-50%, -50%)` }}
                   initial={{ x: 0, y: 0, scale: 0 }}
                   animate={{
                     x: Math.cos(angle) * radius,
                     y: Math.sin(angle) * radius,
                     scale,
-                    opacity: [0.3, 0.8, 0.3],
+                    opacity: [0.3, 0.9, 0.3],
                   }}
                   transition={{
                     duration: 2 + Math.random() * 3,
@@ -134,7 +134,7 @@ export default function NutritionInfo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="text-xs text-gray-400 mt-32 italic"
+            className="text-sm text-gray-300 mt-32 italic"
           >
             Percentage values based on a 2000 kcal daily intake
           </motion.p>

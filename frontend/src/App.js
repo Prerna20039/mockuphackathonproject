@@ -7,6 +7,8 @@ import NutritionInfo from "./components/NutritionInfo";
 import LaunchingSection from "./components/launching";
 import CertificateSection from "./components/certificate";
 import Footer from "./components/footer";
+import AboutSection from "./components/about";
+
 
 
 export default function App() {
@@ -16,9 +18,12 @@ export default function App() {
       <HeroSection />
       <ProductShowcase />
       <NutritionInfo />
+      <AboutSection />
       <LaunchingSection />
       <CertificateSection />
+      
       <Footer />
+
     </div>
   );
 }
