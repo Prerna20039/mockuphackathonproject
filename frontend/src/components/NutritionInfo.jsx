@@ -4,12 +4,15 @@ import { motion } from "framer-motion";
 
 export default function NutritionInfo() {
   const nutritionFacts = [
-    { label: "Energy", value: "45 KCAL", percentage: "2.25%" },
+    { label: "Energy", value: "50 KCAL", percentage: "2.25%" },
     { label: "Carbohydrates", value: "11g", percentage: "22%" },
-    { label: "Added Sugar", value: "5.99g", percentage: "19.18%" },
-    { label: "Total Sugar", value: "8.5g", percentage: "-" },
-    { label: "Protein", value: "20g", percentage: "-" },
-    { label: "Saturated Fat", value: "30g", percentage: "-" },
+    { label: "Added Sugar", value: "11g", percentage: "19.18%" },
+    { label: "Total Sugar", value: "11g", percentage: "-" },
+    { label: "Protein", value: "0g", percentage: "-" },
+    { label: "Saturated Fat", value: "0g", percentage: "-" },
+    { label: "Caffine", value: "30mg", percentage: "-" },
+    { label: "Taurine", value: "400mg", percentage: "-" },
+
   ];
 
   return (
